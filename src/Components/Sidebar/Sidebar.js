@@ -9,6 +9,7 @@ function Sidebar() {
           color: "#8E8E8E",
           marginBottom: "35px",
           fontSize: "14px",
+          //fontWeight: "bold",
         }}
       >
         + New Database
