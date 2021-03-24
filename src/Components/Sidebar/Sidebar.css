@@ -5,10 +5,21 @@
 }
 
 .sidebar {
-  flex: 0.2;
+  flex: 0.1;
+  padding: 20px 30px;
   background-color: #ffeaf0;
-  font-size: 14px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.sidebar__tree {
+  font-size: 12px;
+}
+
+.sidebar__subtree {
+  font-size: 11px;
+  color: #858585;
+  margin-left: 15px;
 }

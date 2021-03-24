@@ -6,7 +6,19 @@ function Editor() {
   return (
     <div className="editor">
       <Sidebar />
-      <h3>Im the editor page!!</h3>
+
+      <div className="editor__right">
+        <div className="editor__top">
+          <p>
+            Database &gt; <span>Employee</span>{" "}
+          </p>
+          <p>+ New Table</p>
+        </div>
+
+        <div className="editor__table">
+          <h3>Editor table area</h3>
+        </div>
+      </div>
     </div>
   );
 }
