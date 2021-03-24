@@ -11,7 +11,8 @@
 .editor__right {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* flex: 0.8; */
+  width: 90vw;
 }
 
 .editor__top {

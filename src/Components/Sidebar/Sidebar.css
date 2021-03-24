@@ -5,7 +5,7 @@
 }
 
 .sidebar {
-  flex: 0.1;
+  width: 10vw;
   padding: 20px 30px;
   background-color: #ffeaf0;
   display: flex;
