@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
-* {
-  font-family: "Poppins", sans-serif;
-}
-
 .editor {
   display: flex;
 }
@@ -12,7 +8,7 @@
   display: flex;
   flex-direction: column;
   /* flex: 0.8; */
-  width: 90vw;
+  width: 87vw;
   /* padding: 20px 30px; */
 }
 

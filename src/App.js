@@ -1,10 +1,10 @@
-import Editor from "./Pages/Editor/Editor";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import "./App.css";
 
 function App() {
   return (
     <div className="app">
-      <Editor />
+      <Dashboard />
     </div>
   );
 }

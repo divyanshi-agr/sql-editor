@@ -4,34 +4,21 @@ import Sidebar from "./../../Components/Sidebar/Sidebar";
 import Table from "./../../Components/Table/Table";
 import Dialog from "./../../Components/Dialog/Dialog";
 
-function Editor() {
-  const tempData = [
-    {
-      db_name: "Sample Database",
-      tables: ["Table 1", "Table 2", "Table 3"],
-    },
-    {
-      db_name: "Employee",
-      tables: ["Department", "Salary", "Manager"],
-    },
-  ];
-  const [data, setData] = useState(tempData);
+function Editor({ data, setData, selectedItem, setSelectedItem }) {
   const [openDialog, setOpenDialog] = useState(false);
 
   const addTable = () => {
     setOpenDialog(true);
   };
 
+  const { db, table } = selectedItem;
   return (
     <div className="editor">
-      <Sidebar data={data} setData={setData} />
-
       <div className="editor__right">
         <div className="editor__top">
           <div className="editor__topHeader">
             <p style={{ color: "#BFBFBF" }}>
-              Database &nbsp; &gt; &nbsp;{" "}
-              <span className="tabname">Employee</span>
+              Database &nbsp; &gt; &nbsp; <span className="tabname">{db}</span>
             </p>
             <p className="table_button" onClick={addTable}>
               + New Table
@@ -46,7 +33,7 @@ function Editor() {
             <div className="editor__topHeader">
               <p style={{ color: "#BFBFBF" }}>
                 Table &nbsp; &gt; &nbsp;{" "}
-                <span className="tabname">Department</span>
+                <span className="tabname">{table}</span>
               </p>
             </div>
 
@@ -55,7 +42,14 @@ function Editor() {
         </div>
       </div>
 
-      <Dialog open={openDialog} setOpen={setOpenDialog} type="table" />
+      <Dialog
+        open={openDialog}
+        setOpen={setOpenDialog}
+        data={data}
+        setData={setData}
+        selectedDb={db}
+        type="table"
+      />
     </div>
   );
 }
