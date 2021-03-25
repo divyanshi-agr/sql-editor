@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Sidebar.css";
 import Dialog from "./../Dialog/Dialog";
 
-function Sidebar({ data }) {
+function Sidebar({ data, setData }) {
   const [openDialog, setOpenDialog] = useState(false);
 
   const addDatabase = () => {
@@ -22,19 +22,26 @@ function Sidebar({ data }) {
               {i + 1}. {db.db_name}
             </p>
             <div className="sidebar__subtree">
-              {db["tables"].map((table, i) => {
-                return (
-                  <p>
-                    {i + 1}. {table}
-                  </p>
-                );
-              })}
+              {db["tables"] &&
+                db["tables"].map((table, i) => {
+                  return (
+                    <p>
+                      {i + 1}. {table}
+                    </p>
+                  );
+                })}
             </div>
           </div>
         );
       })}
 
-      <Dialog open={openDialog} setOpen={setOpenDialog} />
+      <Dialog
+        open={openDialog}
+        setOpen={setOpenDialog}
+        data={data}
+        setData={setData}
+        type="db"
+      />
     </div>
   );
 }

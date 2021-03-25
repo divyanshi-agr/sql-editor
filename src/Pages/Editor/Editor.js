@@ -24,7 +24,7 @@ function Editor() {
 
   return (
     <div className="editor">
-      <Sidebar data={data} />
+      <Sidebar data={data} setData={setData} />
 
       <div className="editor__right">
         <div className="editor__top">
@@ -55,7 +55,7 @@ function Editor() {
         </div>
       </div>
 
-      <Dialog open={openDialog} setOpen={setOpenDialog} />
+      <Dialog open={openDialog} setOpen={setOpenDialog} type="table" />
     </div>
   );
 }
