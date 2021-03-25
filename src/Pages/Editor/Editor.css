@@ -34,4 +34,21 @@
 
 .editor__bottomTable {
   padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabname {
+  color: #ff4079;
+  font-weight: 600;
+}
+
+.table_button {
+  color: #adadad;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.table_button:active {
+  color: #8d8d8d;
 }

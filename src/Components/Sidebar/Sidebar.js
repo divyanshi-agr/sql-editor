@@ -1,37 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
+import Dialog from "./../Dialog/Dialog";
 
-function Sidebar() {
+function Sidebar({ data }) {
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const addDatabase = () => {
+    setOpenDialog(true);
+  };
+
   return (
     <div className="sidebar">
-      <p
-        style={{
-          color: "#8E8E8E",
-          marginBottom: "35px",
-          fontSize: "14px",
-          //fontWeight: "bold",
-        }}
-      >
+      <p className="db_button" onClick={addDatabase}>
         + New Database
       </p>
 
-      <div className="sidebar__tree">
-        <p>1. Sample Database</p>
-        <div className="sidebar__subtree">
-          <p>1. Table 1</p>
-          <p>2. Table 2</p>
-          <p>3. Table 3</p>
-        </div>
-      </div>
+      {data.map((db, i) => {
+        return (
+          <div className="sidebar__tree">
+            <p>
+              {i + 1}. {db.db_name}
+            </p>
+            <div className="sidebar__subtree">
+              {db["tables"].map((table, i) => {
+                return (
+                  <p>
+                    {i + 1}. {table}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
 
-      <div className="sidebar__tree">
-        <p>1. Database 1</p>
-        <div className="sidebar__subtree">
-          <p>1. Table 1</p>
-          <p>2. Table 2</p>
-          <p>3. Table 3</p>
-        </div>
-      </div>
+      <Dialog open={openDialog} setOpen={setOpenDialog} />
     </div>
   );
 }
